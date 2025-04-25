@@ -1,6 +1,6 @@
 {
     "name": "guzzle/guzzle",
-    "version": "3.8.1-high5",
+    "version": "3.8.1",
     "type": "library",
     "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
     "keywords": ["framework", "http", "rest", "web service", "curl", "client", "HTTP client"],
