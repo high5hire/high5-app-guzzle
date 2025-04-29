@@ -586,7 +586,7 @@ class Request extends AbstractMessage implements RequestInterface
             // modifying the Event object in your listeners or calling setResponse() on the request
             if ($this->response->isError()) {
                 $event = new Event($this->getEventArray());
-                $this->getEventDispatcher()->dispatch('request.error', $event);
+                $this->getEventDispatcher()->dispatch($event, 'request.error');
                 // Allow events of request.error to quietly change the response
                 if ($event['response'] !== $this->response) {
                     $this->response = $event['response'];
