@@ -233,7 +233,7 @@ class CurlHandle
      */
     public function __construct($handle, $options)
     {
-        if (!is_resource($handle)) {
+        if (!$handle instanceof \CurlHandle) {
             throw new InvalidArgumentException('Invalid handle provided');
         }
         if (is_array($options)) {
@@ -272,7 +272,7 @@ class CurlHandle
      */
     public function isAvailable()
     {
-        return is_resource($this->handle);
+        return $this->handle instanceof \CurlHandle;
     }
 
     /**
@@ -322,7 +322,7 @@ class CurlHandle
      */
     public function getInfo($option = null)
     {
-        if (!is_resource($this->handle)) {
+        if (!$this->handle instanceof \CurlHandle) {
             return null;
         }
 
